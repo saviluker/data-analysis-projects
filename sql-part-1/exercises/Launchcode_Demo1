@@ -1,0 +1,11 @@
+/*SELECT driverId
+FROM formula_one.dbo.lap_times
+WHERE time < '0:57.0'
+*/
+-- this is a comment line (single line)
+--How many pit stops did each driver take in each race they competed in?
+use formula_one
+select max("stop")as total_pit_stops, raceId, driverID
+from pit_stops
+Group by raceId, driverId
+Order by raceId
